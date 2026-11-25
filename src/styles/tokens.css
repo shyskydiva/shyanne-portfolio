@@ -1,0 +1,73 @@
+/* =========================================================
+   Design tokens — every color, font and size lives here.
+   Change a value once and the whole site updates.
+   Light is the default; [data-theme="dark"] on <html> swaps them.
+   ========================================================= */
+
+:root {
+  /* Colors (light) */
+  --bg: #eae4ff;          /* Haze: page base */
+  --sky1: #d9ccff;        /* Lilac Sky: top of gradient */
+  --sky2: #ffe0f0;        /* Blush Sky: middle of gradient */
+  --cloud: #ffffff;       /* Cloud: cards, pills */
+  --ink: #3b2a5e;         /* Night Ink: main text */
+  --muted: #5e4f7c;       /* Dusk: secondary text */
+  --accent: #7c3aed;      /* Violet: buttons, links */
+  --on-accent: #ffffff;   /* text that sits on Violet */
+  --pink: #b83c7e;        /* Cotton Candy: labels */
+  --line: #c9b8f2;        /* Puff Shadow: card drops, borders (decorative) */
+  --star: #ffd36e;        /* Starlight */
+  --chip: #f3eeff;        /* Mist: tags */
+  --error: #a3243b;
+  --moon-glow: 0 0 0 transparent; /* the sun doesn't glow in light mode (not 'none', so it can sit in a shadow list) */
+
+  /* Fonts */
+  --font-display: 'Mochiy Pop One', system-ui, sans-serif;
+  --font-body: 'Quicksand', system-ui, sans-serif;
+
+  /* Shape */
+  --radius-pill: 999px;
+  --radius-card: 40px;      /* big cards (current role, experience) */
+  --radius-card-sm: 30px;   /* project cards */
+  --radius-inner: 10px;     /* image wells inside cards */
+
+  /* Type scale (from Figma)
+     Fluid sizes scale linearly from the 402px mobile frame
+     to the 1728px desktop frame, then stop. */
+  --text-xs: 12px;                                 /* tags, footer, small links */
+  --text-sm: 14px;                                 /* buttons, labels, meta, kicker */
+  --text-base: 16px;                               /* body copy, card text, inputs */
+  --text-md: clamp(16px, 0.151vw + 15.39px, 18px); /* lead paragraph */
+  --text-lg: 20px;                                 /* card titles, logo, mobile menu */
+  --text-xl: clamp(24px, 0.302vw + 22.79px, 28px); /* section titles */
+  --text-hero: clamp(42px, 2.262vw + 32.9px, 72px); /* page title */
+
+  /* The flat "puff" shadows (Figma: 7px under cards, 5px under anything clickable) */
+  --puff-card: 0 7px 0 var(--line);
+  --puff-btn: 0 5px 0 var(--line);
+
+  /* Layout — desktop frame 1728 (100px gutters + 1528 content),
+     mobile frame 402 (20px gutters + 362 content) */
+  --content-width: 1528px;
+  --page-gutter: clamp(20px, 6.033vw - 4.25px, 100px);
+  --grid-gap: clamp(20px, 0.754vw + 16.97px, 30px);    /* between cards */
+  --section-gap: clamp(40px, 1.508vw + 33.94px, 60px); /* between page sections */
+  --lead-gap: clamp(27px, 0.679vw + 24.27px, 36px);    /* page title → lead */
+}
+
+[data-theme='dark'] {
+  --bg: #151033;
+  --sky1: #1e1748;
+  --sky2: #2d1a4a;
+  --cloud: #2a2252;
+  --ink: #f2edff;
+  --muted: #b6acd6;
+  --accent: #c4b5fd;
+  --on-accent: #151033;
+  --pink: #f9a8d4;
+  --line: #4a3d80;
+  --star: #ffe39a;
+  --chip: #352c63;
+  --error: #ffa3b5;
+  --moon-glow: 0 0 40px rgba(255, 227, 154, 0.6); /* sun becomes a glowing moon */
+}

@@ -1,0 +1,64 @@
+/* The whole-page sky: lilac at the top → pink → page color.
+   Flex column so the footer sits at the bottom on short pages. */
+.sky {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden; /* clips clouds hanging off the edges */
+  background: linear-gradient(180deg, var(--sky1) 0%, var(--sky2) 52%, var(--bg) 100%);
+}
+.sky > main { flex: 1; }
+
+.sky__star {
+  position: absolute;
+  color: var(--star);
+  pointer-events: none;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+/* Page content sits above the decorative clouds and stars */
+.sky > main,
+.sky > footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* A cloud = one pill + two circles made with ::before and ::after */
+.puff {
+  position: absolute;
+  --w: clamp(181px, 5.43vw + 159.2px, 253px);
+  width: var(--w);
+  height: calc(var(--w) * 0.42);
+  border-radius: var(--radius-pill);
+  background: var(--cloud);
+  opacity: var(--o, 0.7);
+  pointer-events: none;
+}
+.puff::before,
+.puff::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: var(--cloud);
+}
+.puff::before {
+  left: 18%;
+  top: -45%;
+  width: 40%;
+  height: 100%;
+}
+.puff::after {
+  left: 45%;
+  top: -70%;
+  width: 44%;
+  height: 130%;
+}

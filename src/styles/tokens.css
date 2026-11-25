@@ -54,6 +54,7 @@
   --grid-gap: clamp(20px, 0.754vw + 16.97px, 30px);    /* between cards */
   --section-gap: clamp(40px, 1.508vw + 33.94px, 60px); /* between page sections */
   --lead-gap: clamp(27px, 0.679vw + 24.27px, 36px);    /* page title → lead */
+  --hero-width: 560px;                                 /* page title + lead share this width (Figma) */
 }
 
 [data-theme='dark'] {

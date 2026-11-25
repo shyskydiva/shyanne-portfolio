@@ -1,21 +1,28 @@
-import ThemeToggle from './components/ThemeToggle';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
-/* Temporary page shell — swap in the real Header, pages and Footer
-   as they get built. */
+/* Routing map: which URL shows which page.
+   All routes sit inside <Layout>, so they share the header/footer. */
 export default function App() {
   return (
-    <>
-      <a className="skip-link" href="#main">Skip to content</a>
-
-      <header className="container" style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: 25 }}>
-        <ThemeToggle />
-      </header>
-
-      <main id="main" className="container">
-        <span className="kicker">head in the clouds, code on the ground</span>
-        <h1 className="page-title">Shyanne Cortes</h1>
-        <p className="lead">Portfolio in progress.</p>
-      </main>
-    </>
+    <ThemeProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }

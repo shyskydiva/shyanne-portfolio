@@ -4,10 +4,13 @@ import { createRoot } from 'react-dom/client';
 // so component styles (imported inside App) must come after these.
 import './styles/tokens.css';
 import './styles/global.css';
+import { ThemeProvider } from './context/ThemeContext';
 import App from './App';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </StrictMode>
 );

@@ -17,6 +17,7 @@
   --pink: #b83c7e;        /* Cotton Candy: labels */
   --line: #c9b8f2;        /* Puff Shadow: card drops, borders (decorative) */
   --star: #ffd36e;        /* Starlight */
+  --on-star: #3b2a5e;     /* icon on Starlight — stays dark in both themes */
   --chip: #f3eeff;        /* Mist: tags */
   --error: #a3243b;
   --moon-glow: 0 0 0 transparent; /* the sun doesn't glow in light mode (not 'none', so it can sit in a shadow list) */
@@ -67,6 +68,7 @@
   --pink: #f9a8d4;
   --line: #4a3d80;
   --star: #ffe39a;
+  --on-star: #3b2a5e;
   --chip: #352c63;
   --error: #ffa3b5;
   --moon-glow: 0 0 40px rgba(255, 227, 154, 0.6); /* sun becomes a glowing moon */

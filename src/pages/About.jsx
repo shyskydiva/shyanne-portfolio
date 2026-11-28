@@ -1,10 +1,22 @@
-/* Placeholder — replace with the real About page. */
+import Avatar from '../components/Avatar';
+import PageHero from '../components/PageHero';
+import useDocumentTitle from '../hooks/useDocumentTitle';
+
+/* Placeholder — the rest of the About page goes below the hero. */
 export default function About() {
+  useDocumentTitle('About');
+
   return (
-    <section className="section">
-      <span className="kicker">about me</span>
-      <h1 className="page-title page-title--wide">Hi, I’m <span className="highlight">Shyanne</span></h1>
-      <p className="lead">Page coming soon.</p>
-    </section>
+    <>
+      {/* About is the one page with the image on the left (Figma) */}
+      <PageHero
+        kicker="about me"
+        title={<>Hi, I’m <span className="highlight">Shyanne</span></>}
+        wideTitle
+        lead="Page coming soon."
+        aside={<Avatar variant="about" src="/images/chibi2.webp" alt="Chibi illustration of Shyanne coding on a laptop" />}
+        asideFirst
+      />
+    </>
   );
 }

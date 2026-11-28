@@ -1,0 +1,15 @@
+/* Size scales smoothly from --min (402px mobile frame) to --max
+   (1728px desktop frame). To resize, just change those two numbers */
+.avatar {
+  flex: none;
+  height: auto;
+  width: clamp(
+    var(--min) * 1px,
+    var(--min) * 1px + (var(--max) - var(--min)) * (100vw - 402px) / 1326,
+    var(--max) * 1px
+  );
+  animation: float 6s ease-in-out infinite; /* @keyframes float lives in global.css */
+}
+
+.avatar--home  { --min: 135; --max: 370; }
+.avatar--about { --min: 300; --max: 370; }

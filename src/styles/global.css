@@ -83,6 +83,25 @@ a { color: inherit; }
 
 .section { margin-top: var(--section-gap); }
 
+/* Page hero (PageHero.jsx): two equal columns — text in one, the
+   chibi or contact form in the other. Top-aligned so the kicker starts
+   at the same height on every page. Stacks on small screens with the
+   chibi on top, as in the mobile Figma frames. */
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: var(--grid-gap);
+  margin-top: var(--page-top);
+}
+.hero > .avatar { justify-self: center; }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero > .avatar { order: -1; }
+  .hero > .avatar--home { justify-self: start; } /* small and left-aligned on mobile Home */
+}
+
 .card-grid {
   display: grid;
   gap: var(--grid-gap);

@@ -1,10 +1,19 @@
-/* Placeholder — replace with the real Home page. */
+import Avatar from '../components/Avatar';
+import PageHero from '../components/PageHero';
+import useDocumentTitle from '../hooks/useDocumentTitle';
+
+/* Placeholder — the rest of the Home page goes below the hero. */
 export default function Home() {
+  useDocumentTitle(); // no page name on Home → "Shyanne Cortes · Portfolio"
+
   return (
-    <section className="section">
-      <span className="kicker">head in the clouds, code on the ground</span>
-      <h1 className="page-title">Shyanne<br /><span className="highlight">Cortes</span></h1>
-      <p className="lead">Web &amp; Mobile Computing student at RIT building full-stack web apps.</p>
-    </section>
+    <>
+      <PageHero
+        kicker="head in the clouds, code on the ground"
+        title={<>Shyanne<br /><span className="highlight">Cortes</span></>}
+        lead="Web & Mobile Computing student at RIT building full-stack web apps. Graduating May 2027 and open to full-stack, software developer and UX roles."
+        aside={<Avatar variant="home" src="/images/chibi.webp" alt="Chibi illustration of Shyanne" />}
+      />
+    </>
   );
 }

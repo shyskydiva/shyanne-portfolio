@@ -1,10 +1,17 @@
-/* Placeholder — replace with the real NotFound page. */
+import PageHero from '../components/PageHero';
+import useDocumentTitle from '../hooks/useDocumentTitle';
+
+/* Placeholder — the rest of the NotFound page goes below the hero. */
 export default function NotFound() {
+  useDocumentTitle('Page not found');
+
   return (
-    <section className="section">
-      <span className="kicker">lost in the clouds</span>
-      <h1 className="page-title">Page not found</h1>
-      <p className="lead">That page drifted away.</p>
-    </section>
+    <>
+      <PageHero
+        kicker="lost in the clouds"
+        title="Page not found"
+        lead="That page drifted away."
+      />
+    </>
   );
 }
